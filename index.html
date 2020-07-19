@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+</head>
+<body>
+    <div id="#app">
+        <h3>姓名：{{obj.name}}</h3>
+        <h3>年龄：{{obj.age}}</h3>
+        <div v-html='html'></div>
+        <div>{{msg}}</div>
+        <input type="text" v-model='msg'>
+        <button @click='update'>更新</button>
+    </div>
+    <script src="./WVue.js"></script>
+    <script>
+        const vm = new WVue({
+            el: '#app',
+            data: {
+                obj: {
+                    name: 'whg',
+                    age: 18,
+                },
+                msg: '前端小白',
+                html: '<h3>hello，Vue</h3>'
+            },
+            methods: {
+                update() {
+                    // 使用vm代理vm.$data实现
+                    this.obj.name = '王华港'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
