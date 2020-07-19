@@ -2,6 +2,7 @@
 ### MVVM原理
 
 代码地址：[https://github.com/WangHuagang/VueSourceCode](https://github.com/WangHuagang/VueSourceCode)
+
 Vue响应式原理最核心的方法便是通过Object.defineProperty()来实现对属性的劫持，达到监听数据变动的目的，无疑这个方法是本文中最重要、最基础的内容之一
 整理了一下，要实现mvvm的双向绑定，就必须要实现以下几点：
 
